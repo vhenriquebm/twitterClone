@@ -103,7 +103,11 @@ class LoginController: UIViewController {
     
     @objc func handleShowSignUp () {
         
-        print{"working"}
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
+        
+        
+        
     }
     
     
