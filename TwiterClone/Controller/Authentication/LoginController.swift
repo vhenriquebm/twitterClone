@@ -11,9 +11,6 @@ import UIKit
 
 class LoginController: UIViewController {
     
-    
-    
-    
     //MARK: - Lifecycle
     
     
@@ -75,7 +72,7 @@ class LoginController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handlerLogin), for: .touchUpInside)
         return button
         
         
@@ -94,14 +91,38 @@ class LoginController: UIViewController {
     
     // MARK: - Selectors
     
-    @objc func handleLogin () {
+    @objc func handlerLogin () {
         
-        print{"working"}
+        guard let email = emailTextfield.text else { return}
+        guard let password = passWordTextfield.text else {return}
+        
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
+            
+            if let error = error {
+                
+                print("DEBUG: Error logging in \(error.localizedDescription)")
+                
+                return
+            }
+            
+            
+            guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else {
+                return
+            }
+            
+            guard let tab = window.rootViewController as? MainTabController else {return}
+            
+            tab.authenticateUerAndConfigUI()
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     
     
     @objc func handleShowSignUp () {
+        
         
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)

@@ -154,45 +154,28 @@ class RegistrationController: UIViewController {
         guard let password = passwordTextfield.text else {return}
         guard let fullname = fullNameTextfield.text else {return}
         guard let userName = userNameTextfield.text else {return}
-        guard let imagedata = profileImage?.jpegData(compressionQuality: 0.3) else {return}
-        let fileName = NSUUID().uuidString
-        let storageref = STORAGE_PROFILE_IMAGES.child(fileName)
         
-        
-        storageref.putData(imagedata, metadata: nil) { meta, error in
-            storageref.downloadURL {( url, error) in
-                guard let profileImageUrl = url?.absoluteString else {return}
-                
-                
-                Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                    
-                    if let error = error {
-                        
-                        print ( "DEBUG: Error is \(error.localizedDescription)")
-                        
-                        return
-                    }
-                    
-                    guard let uid = result?.user.uid else {return}
-                    
-                    
-                    let values = ["email": email,
-                                  "username":userName,
-                                  "fullname": fullname,
-                                  "profileImageUrl": profileImageUrl]
-                    
-                    REF_USERS.child(uid).updateChildValues(values) { (error, ref) in
-                        
-                        
-                    }
-                    
-                }
-                
-                
+        let credentials = AuthCredentials(email: email, password: password, fullName: fullname, userName: userName, profileImage: image)
+        AuthService.shared.registerUser(credentials: credentials) { (error, ref) in
+            
+            
+            guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else {
+                return
             }
+            
+            guard let tab = window.rootViewController as? MainTabController else {return}
+            
+            tab.authenticateUerAndConfigUI()
+            
+            self.dismiss(animated: true, completion: nil)
+            
         }
         
+        
     }
+    
+    
+    
     
     
     

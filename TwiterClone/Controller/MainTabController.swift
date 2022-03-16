@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 class MainTabController: UITabBarController {
@@ -28,10 +29,50 @@ class MainTabController: UITabBarController {
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
-        configureViewControllers()
-        configureUI()
+        //logUserOut()
+        authenticateUerAndConfigUI()
         
     }
+    
+    
+    //MARK: - API
+    
+    func authenticateUerAndConfigUI () {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+                
+            }
+            
+            print ("DEBUG: User is NOT logged in")
+        } else {
+            
+            configureUI()
+            configureViewControllers()
+            
+            
+            print ("DEBUG: User is logged in")
+        }
+    }
+    
+    
+    
+    func logUserOut () {
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        }
+        
+        
+    }
+    
+    
+    
     
     
     //MARK: - Selectors
@@ -61,7 +102,6 @@ class MainTabController: UITabBarController {
     func configureViewControllers () {
         
         let feed = FeedController()
-        
         let nav1 = templateViewController(image: UIImage(named: "home_unselected"), rootViewController: feed)
         
         let explore = ExploreController()

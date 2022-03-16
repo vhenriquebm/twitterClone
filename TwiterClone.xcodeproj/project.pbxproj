@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4270D27E27E2070E00DDA47C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D27D27E2070E00DDA47C /* AuthService.swift */; };
 		42811DE527DF97C60059E2BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42811DE427DF97C60059E2BA /* Extensions.swift */; };
 		42B2545727DF74B700DF24E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2545627DF74B700DF24E1 /* AppDelegate.swift */; };
 		42B2545927DF74B700DF24E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2545827DF74B700DF24E1 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		375E506B9A267F3E2A8C2B2D /* Pods_TwiterClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwiterClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4270D27D27E2070E00DDA47C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		42811DE427DF97C60059E2BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		42B2545327DF74B700DF24E1 /* TwiterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwiterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B2545627DF74B700DF24E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		42B2546E27DF754F00DF24E1 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4270D27D27E2070E00DDA47C /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				42B2547527DF81E200DF24E1 /* ExploreController.swift in Sources */,
 				42B2545927DF74B700DF24E1 /* SceneDelegate.swift in Sources */,
 				42811DE527DF97C60059E2BA /* Extensions.swift in Sources */,
+				4270D27E27E2070E00DDA47C /* AuthService.swift in Sources */,
 				42B2547127DF7FB000DF24E1 /* MainTabController.swift in Sources */,
 				42B2547927DF820600DF24E1 /* NotificationsController.swift in Sources */,
 				42B2547727DF81F600DF24E1 /* ConversationsController.swift in Sources */,
