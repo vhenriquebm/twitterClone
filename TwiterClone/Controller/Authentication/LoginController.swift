@@ -126,15 +126,10 @@ class LoginController: UIViewController {
         
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
-        
-        
-        
     }
     
     
-    
-    
-    
+
     // MARK: - Helpers
     
     func configureUI () {
