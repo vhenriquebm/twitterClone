@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4214BF8927FDCD070080B8C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214BF8827FDCD070080B8C8 /* User.swift */; };
 		4270D27E27E2070E00DDA47C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D27D27E2070E00DDA47C /* AuthService.swift */; };
 		42811DE527DF97C60059E2BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42811DE427DF97C60059E2BA /* Extensions.swift */; };
 		4288335527FB9850009147FA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4288335427FB9850009147FA /* UserService.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		375E506B9A267F3E2A8C2B2D /* Pods_TwiterClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwiterClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4214BF8827FDCD070080B8C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4270D27D27E2070E00DDA47C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		42811DE427DF97C60059E2BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4288335427FB9850009147FA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		42B2546A27DF750300DF24E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4214BF8827FDCD070080B8C8 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				42B2545927DF74B700DF24E1 /* SceneDelegate.swift in Sources */,
 				42811DE527DF97C60059E2BA /* Extensions.swift in Sources */,
 				4270D27E27E2070E00DDA47C /* AuthService.swift in Sources */,
+				4214BF8927FDCD070080B8C8 /* User.swift in Sources */,
 				42B2547127DF7FB000DF24E1 /* MainTabController.swift in Sources */,
 				42B2547927DF820600DF24E1 /* NotificationsController.swift in Sources */,
 				42B2547727DF81F600DF24E1 /* ConversationsController.swift in Sources */,
