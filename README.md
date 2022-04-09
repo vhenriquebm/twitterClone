@@ -2,7 +2,9 @@
 <h1>What is this project about?</h1>
 
 
-This projects works with view code, MVVM, Cocoa Pods and some features thatm I believe you guys will like.
+<h4> This projects works with view code, MVVM, Cocoa Pods and some features that I believe you guys will like. </h4>
+
+<br> 
 
 
 
